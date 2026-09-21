@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniBird!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Tela de Inicio -->
+        <div id="start-screen" class="overlay">
+            <h1 class="brand-title">UniBird!</h1>
+            <p>Digite seu nome para jogar:</p>
+            <input type="text" id="player-name" placeholder="Seu nome ou apelido" maxlength="15">
+
+            <p class="select-label">Escolha seu passarinho:</p>
+            <div class="bird-selector">
+                <label class="bird-option">
+                    <input type="radio" name="bird-select" value="classico" checked>
+                    <img src="bird.png" alt="Clássico">
+                </label>
+                <label class="bird-option">
+                    <input type="radio" name="bird-select" value="colorido">
+                    <img src="bird-colorido.png" alt="Colorido">
+                </label>
+                <label class="bird-option">
+                    <input type="radio" name="bird-select" value="preto">
+                    <img src="bird-preto.png" alt="Preto">
+                </label>
+                <label class="bird-option">
+                    <input type="radio" name="bird-select" value="azul">
+                    <img src="bird-azul.png" alt="Azul Claro">
+                </label>
+            </div>
+
+            <button id="btn-start">JOGAR</button>
+
+            <div class="leaderboard-box">
+                <h2>Top Recordes</h2>
+                <ol id="leaderboard-list"></ol>
+            </div>
+            
+            <button id="btn-clear-scores" class="btn-danger-small">Limpar Ranking</button>
+        </div>
+
+        <!-- Canvas do Jogo -->
+        <canvas id="canvas"></canvas>
+
+        <!-- Tela de Game Over -->
+        <div id="gameover-screen" class="overlay hidden">
+            <h1 class="danger">Fim de Jogo!</h1>
+            <p id="final-score-text">Pontuação: 0</p>
+            <p id="current-player-text">Jogador: -</p>
+
+            <p class="select-label">Trocar passarinho:</p>
+            <div class="bird-selector">
+                <label class="bird-option">
+                    <input type="radio" name="bird-select-go" value="classico">
+                    <img src="bird.png" alt="Clássico">
+                </label>
+                <label class="bird-option">
+                    <input type="radio" name="bird-select-go" value="colorido">
+                    <img src="bird-colorido.png" alt="Colorido">
+                </label>
+                <label class="bird-option">
+                    <input type="radio" name="bird-select-go" value="preto">
+                    <img src="bird-preto.png" alt="Preto">
+                </label>
+                <label class="bird-option">
+                    <input type="radio" name="bird-select-go" value="azul">
+                    <img src="bird-azul.png" alt="Azul Claro">
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button id="btn-restart">Jogar Novamente</button>
+                <button id="btn-new-player">Mudar de Jogador</button>
+            </div>
+
+            <div class="leaderboard-box">
+                <h2>Top Recordes</h2>
+                <ol id="leaderboard-list-gameover"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
